@@ -1,0 +1,89 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	__vector_1
+  18               	__vector_1:
+  19               	.LFB2:
+  20               	.LM1:
+  21 0000 1F92      		push __zero_reg__
+  22 0002 0F92      		push r0
+  23 0004 0FB6      		in r0,__SREG__
+  24 0006 0F92      		push r0
+  25 0008 1124      		clr __zero_reg__
+  26 000a 8F93      		push r24
+  27               	/* prologue: Signal */
+  28               	/* frame size = 0 */
+  29               	.LM2:
+  30 000c 8091 0000 		lds r24,z
+  31 0010 8F5F      		subi r24,lo8(-(1))
+  32 0012 8093 0000 		sts z,r24
+  33               	/* epilogue start */
+  34               	.LM3:
+  35 0016 8F91      		pop r24
+  36 0018 0F90      		pop r0
+  37 001a 0FBE      		out __SREG__,r0
+  38 001c 0F90      		pop r0
+  39 001e 1F90      		pop __zero_reg__
+  40 0020 1895      		reti
+  41               	.LFE2:
+  43               	.global	main
+  45               	main:
+  46               	.LFB3:
+  47               	.LM4:
+  48               	/* prologue: function */
+  49               	/* frame size = 0 */
+  50               	.LM5:
+  51 0022 8FEF      		ldi r24,lo8(-1)
+  52 0024 87BB      		out 55-32,r24
+  53               	.LM6:
+  54 0026 BA98      		cbi 55-32,2
+  55               	.LM7:
+  56 0028 85B7      		in r24,85-32
+  57 002a 8260      		ori r24,lo8(2)
+  58 002c 85BF      		out 85-32,r24
+  59               	.LM8:
+  60 002e 85B7      		in r24,85-32
+  61 0030 8E7F      		andi r24,lo8(-2)
+  62 0032 85BF      		out 85-32,r24
+  63               	.LM9:
+  64 0034 8BB7      		in r24,91-32
+  65 0036 8064      		ori r24,lo8(64)
+  66 0038 8BBF      		out 91-32,r24
+  67               	.LM10:
+  68               	/* #APP */
+  69               	 ;  25 "main.c" 1
+  70 003a 7894      		sei
+  71               	 ;  0 "" 2
+  72               	/* #NOAPP */
+  73               	.L4:
+  74               	.LM11:
+  75 003c 8091 0000 		lds r24,z
+  76 0040 8095      		com r24
+  77 0042 8BBB      		out 59-32,r24
+  78 0044 00C0      		rjmp .L4
+  79               	.LFE3:
+  81               	.global	z
+  82               	.global	z
+  83               		.section .bss
+  86               	z:
+  87 0000 00        		.skip 1,0
+ 120               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:2      *ABS*:0000003f __SREG__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:3      *ABS*:0000003e __SP_H__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:4      *ABS*:0000003d __SP_L__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:5      *ABS*:00000034 __CCP__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:18     .text:00000000 __vector_1
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:86     .bss:00000000 z
+C:\Users\PSM07\AppData\Local\Temp/ccSeeNnu.s:45     .text:00000022 main
+
+UNDEFINED SYMBOLS
+__do_clear_bss

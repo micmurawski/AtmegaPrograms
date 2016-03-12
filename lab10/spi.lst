@@ -1,0 +1,115 @@
+   1               		.file	"spi.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	init_spi
+  18               	init_spi:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 80EB      		ldi r24,lo8(-80)
+  25 0002 87BB      		out 55-32,r24
+  26               	.LM3:
+  27 0004 82E5      		ldi r24,lo8(82)
+  28 0006 8DB9      		out 45-32,r24
+  29               	.LM4:
+  30 0008 1EB8      		out 46-32,__zero_reg__
+  31               	/* epilogue start */
+  32               	.LM5:
+  33 000a 0895      		ret
+  34               	.LFE6:
+  36               	.global	dly_100us
+  38               	dly_100us:
+  39               	.LFB7:
+  40               	.LM6:
+  41               	/* prologue: function */
+  42               	/* frame size = 0 */
+  43               	.LBB24:
+  44               	.LBB25:
+  45               	.LBB26:
+  46               	.LBB27:
+  47               	.LBB28:
+  48               	.LBB29:
+  49               	.LM7:
+  50 000c 84E1      		ldi r24,lo8(276)
+  51 000e 91E0      		ldi r25,hi8(276)
+  52               	.LVL0:
+  53               	/* #APP */
+  54               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  55 0010 0197      		1: sbiw r24,1
+  56 0012 01F4      		brne 1b
+  57               	 ;  0 "" 2
+  58               	/* epilogue start */
+  59               	/* #NOAPP */
+  60               	.LBE29:
+  61               	.LBE28:
+  62               	.LBE27:
+  63               	.LBE26:
+  64               	.LBE25:
+  65               	.LBE24:
+  66               	.LM8:
+  67 0014 0895      		ret
+  68               	.LFE7:
+  70               	.global	rcv_spi
+  72               	rcv_spi:
+  73               	.LFB8:
+  74               	.LM9:
+  75               	/* prologue: function */
+  76               	/* frame size = 0 */
+  77               	.LM10:
+  78 0016 8FEF      		ldi r24,lo8(-1)
+  79 0018 8FB9      		out 47-32,r24
+  80               	.L6:
+  81               	.LM11:
+  82 001a 779B      		sbis 46-32,7
+  83 001c 00C0      		rjmp .L6
+  84               	.LM12:
+  85 001e 8FB1      		in r24,47-32
+  86               	.LVL1:
+  87               	.LVL2:
+  88               	/* epilogue start */
+  89               	.LM13:
+  90 0020 0895      		ret
+  91               	.LFE8:
+  93               	.global	xmit_spi
+  95               	xmit_spi:
+  96               	.LFB9:
+  97               	.LM14:
+  98               	.LVL3:
+  99               	/* prologue: function */
+ 100               	/* frame size = 0 */
+ 101               	.LM15:
+ 102 0022 8FB9      		out 47-32,r24
+ 103               	.L10:
+ 104               	.LM16:
+ 105 0024 779B      		sbis 46-32,7
+ 106 0026 00C0      		rjmp .L10
+ 107               	.LM17:
+ 108 0028 8FB1      		in r24,47-32
+ 109               	.LVL4:
+ 110               	.LVL5:
+ 111               	/* epilogue start */
+ 112               	.LM18:
+ 113 002a 0895      		ret
+ 114               	.LFE9:
+ 164               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 spi.c
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:2      *ABS*:0000003f __SREG__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:3      *ABS*:0000003e __SP_H__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:4      *ABS*:0000003d __SP_L__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:5      *ABS*:00000034 __CCP__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:18     .text:00000000 init_spi
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:38     .text:0000000c dly_100us
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:72     .text:00000016 rcv_spi
+C:\Users\PSM07\AppData\Local\Temp/ccckWeTB.s:95     .text:00000022 xmit_spi
+
+NO UNDEFINED SYMBOLS

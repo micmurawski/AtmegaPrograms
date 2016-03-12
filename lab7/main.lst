@@ -1,0 +1,185 @@
+   1               		.file	"main.c"
+   2               	__SREG__ = 0x3f
+   3               	__SP_H__ = 0x3e
+   4               	__SP_L__ = 0x3d
+   5               	__CCP__  = 0x34
+   6               	__tmp_reg__ = 0
+   7               	__zero_reg__ = 1
+  15               	.Ltext0:
+  16               	.global	main
+  18               	main:
+  19               	.LFB6:
+  20               	.LM1:
+  21               	/* prologue: function */
+  22               	/* frame size = 0 */
+  23               	.LM2:
+  24 0000 8AE1      		ldi r24,lo8(26)
+  25 0002 8EBD      		out 78-32,r24
+  26               	.LM3:
+  27 0004 82EA      		ldi r24,lo8(-94)
+  28 0006 8FBD      		out 79-32,r24
+  29               	.LM4:
+  30 0008 83B7      		in r24,83-32
+  31 000a 8A67      		ori r24,lo8(122)
+  32 000c 83BF      		out 83-32,r24
+  33               	.LM5:
+  34 000e 8FEF      		ldi r24,lo8(255)
+  35 0010 90E0      		ldi r25,hi8(255)
+  36 0012 97BD      		out (70)+1-32,r25
+  37 0014 86BD      		out 70-32,r24
+  38               	.LM6:
+  39 0016 81B3      		in r24,49-32
+  40 0018 8063      		ori r24,lo8(48)
+  41 001a 81BB      		out 49-32,r24
+  42               	.LM7:
+  43 001c BB9A      		sbi 55-32,3
+  44 001e 20E0      		ldi r18,lo8(0)
+  45               	.LVL0:
+  46               	.LBB27:
+  47               	.LM8:
+  48 0020 6FEF      		ldi r22,lo8(255)
+  49 0022 70E0      		ldi r23,hi8(255)
+  50               	.LBB28:
+  51               	.LBB29:
+  52               	.LBB30:
+  53               	.LBB31:
+  54               	.LM9:
+  55 0024 49E9      		ldi r20,lo8(19353)
+  56 0026 5BE4      		ldi r21,hi8(19353)
+  57 0028 00C0      		rjmp .L9
+  58               	.LVL1:
+  59               	.L3:
+  60               	.LBE31:
+  61               	.LBE30:
+  62               	.LBE29:
+  63               	.LBE28:
+  64               	.LBE27:
+  65               	.LBB36:
+  66               	.LM10:
+  67 002a 1CBE      		out 92-32,__zero_reg__
+  68               	.LM11:
+  69 002c 822F      		mov r24,r18
+  70               	.LVL2:
+  71 002e 90E0      		ldi r25,lo8(0)
+  72 0030 99BD      		out (72)+1-32,r25
+  73 0032 88BD      		out 72-32,r24
+  74               	.LM12:
+  75 0034 FB01      		movw r30,r22
+  76 0036 E81B      		sub r30,r24
+  77 0038 F90B      		sbc r31,r25
+  78 003a FBBD      		out (74)+1-32,r31
+  79 003c EABD      		out 74-32,r30
+  80               	.LBB37:
+  81               	.LBB38:
+  82               	.LBB39:
+  83               	.LBB40:
+  84               	.LM13:
+  85 003e CA01      		movw r24,r20
+  86               	.LVL3:
+  87               	/* #APP */
+  88               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+  89 0040 0197      		1: sbiw r24,1
+  90 0042 01F4      		brne 1b
+  91               	 ;  0 "" 2
+  92               	/* #NOAPP */
+  93               	.LBE40:
+  94               	.LBE39:
+  95               	.LBE38:
+  96               	.LBE37:
+  97               	.LM14:
+  98 0044 2F5F      		subi r18,lo8(-(1))
+  99               	.L9:
+ 100 0046 2F3F      		cpi r18,lo8(-1)
+ 101 0048 01F4      		brne .L3
+ 102 004a 20E0      		ldi r18,lo8(0)
+ 103 004c 30E0      		ldi r19,hi8(0)
+ 104               	.LVL4:
+ 105               	.L4:
+ 106               	.LBE36:
+ 107               	.LBB41:
+ 108               	.LM15:
+ 109 004e 1CBE      		out 92-32,__zero_reg__
+ 110 0050 CB01      		movw r24,r22
+ 111               	.LVL5:
+ 112 0052 821B      		sub r24,r18
+ 113 0054 930B      		sbc r25,r19
+ 114               	.LM16:
+ 115 0056 99BD      		out (72)+1-32,r25
+ 116 0058 88BD      		out 72-32,r24
+ 117               	.LM17:
+ 118 005a 3BBD      		out (74)+1-32,r19
+ 119 005c 2ABD      		out 74-32,r18
+ 120               	.LBB35:
+ 121               	.LBB34:
+ 122               	.LBB33:
+ 123               	.LBB32:
+ 124               	.LM18:
+ 125 005e CA01      		movw r24,r20
+ 126               	.LVL6:
+ 127               	/* #APP */
+ 128               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 129 0060 0197      		1: sbiw r24,1
+ 130 0062 01F4      		brne 1b
+ 131               	 ;  0 "" 2
+ 132               	/* #NOAPP */
+ 133 0064 2F5F      		subi r18,lo8(-(1))
+ 134 0066 3F4F      		sbci r19,hi8(-(1))
+ 135               	.LBE32:
+ 136               	.LBE33:
+ 137               	.LBE34:
+ 138               	.LBE35:
+ 139               	.LM19:
+ 140 0068 2F3F      		cpi r18,255
+ 141 006a 3105      		cpc r19,__zero_reg__
+ 142 006c 01F4      		brne .L4
+ 143 006e 20E0      		ldi r18,lo8(0)
+ 144               	.LVL7:
+ 145               	.L5:
+ 146               	.LBE41:
+ 147               	.LBB42:
+ 148               	.LM20:
+ 149 0070 2CBF      		out 92-32,r18
+ 150               	.LM21:
+ 151 0072 19BC      		out (72)+1-32,__zero_reg__
+ 152 0074 18BC      		out 72-32,__zero_reg__
+ 153               	.LM22:
+ 154 0076 1BBC      		out (74)+1-32,__zero_reg__
+ 155 0078 1ABC      		out 74-32,__zero_reg__
+ 156               	.LBB43:
+ 157               	.LBB44:
+ 158               	.LBB45:
+ 159               	.LBB46:
+ 160               	.LM23:
+ 161 007a CA01      		movw r24,r20
+ 162               	.LVL8:
+ 163               	/* #APP */
+ 164               	 ;  105 "c:/winavr-20100110/lib/gcc/../../avr/include/util/delay_basic.h" 1
+ 165 007c 0197      		1: sbiw r24,1
+ 166 007e 01F4      		brne 1b
+ 167               	 ;  0 "" 2
+ 168               	/* #NOAPP */
+ 169               	.LBE46:
+ 170               	.LBE45:
+ 171               	.LBE44:
+ 172               	.LBE43:
+ 173               	.LM24:
+ 174 0080 2F5F      		subi r18,lo8(-(1))
+ 175 0082 2F3F      		cpi r18,lo8(-1)
+ 176 0084 01F4      		brne .L5
+ 177 0086 20E0      		ldi r18,lo8(0)
+ 178               	.LVL9:
+ 179 0088 00C0      		rjmp .L3
+ 180               	.LBE42:
+ 181               	.LFE6:
+ 207               	.Letext0:
+DEFINED SYMBOLS
+                            *ABS*:00000000 main.c
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:2      *ABS*:0000003f __SREG__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:3      *ABS*:0000003e __SP_H__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:4      *ABS*:0000003d __SP_L__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:5      *ABS*:00000034 __CCP__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:6      *ABS*:00000000 __tmp_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:7      *ABS*:00000001 __zero_reg__
+C:\Users\PSM07\AppData\Local\Temp/ccCI6VGS.s:18     .text:00000000 main
+
+NO UNDEFINED SYMBOLS
